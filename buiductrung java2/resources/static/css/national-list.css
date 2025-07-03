@@ -1,0 +1,18 @@
+.content-wrapper h1 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.table th {
+    background-color: #e9ecef;
+    text-align: center;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+.btn {
+    margin-right: 5px;
+}

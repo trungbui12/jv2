@@ -1,0 +1,44 @@
+<!-- templates/players/list.html -->
+<div class="content-wrapper">
+  <section class="content-header">
+    <h1>Danh sách người chơi</h1>
+    <form th:action="@{/players/search}" method="get">
+      <input type="text" name="keyword" placeholder="Tìm theo tên">
+      <button type="submit">Tìm</button>
+    </form>
+    <a th:href="@{/players/create}" class="btn btn-primary">+ Thêm người chơi</a>
+    <a th:href="@{/players/top10}" class="btn btn-warning">Top 10</a>
+  </section>
+
+  <section class="content">
+    <table class="table table-bordered table-hover">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Tên</th>
+        <th>Điểm cao</th>
+        <th>Cấp độ</th>
+        <th>Quốc tịch</th>
+        <th>Hành động</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="p : ${players}">
+        <td th:text="${p.playerId}"></td>
+        <td th:text="${p.playerName}"></td>
+        <td th:text="${p.highScore}"></td>
+        <td th:text="${p.level}"></td>
+        <td th:text="${p.nationalId}"></td>
+        <td>
+          <a th:href="@{'/players/edit/' + ${p.playerId}}" class="btn btn-sm btn-info">Sửa</a>
+          <a th:href="@{'/players/delete/' + ${p.playerId}}" class="btn btn-sm btn-danger" onclick="return confirm('Xoá người chơi này?')">Xoá</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+
+<!-- Gắn riêng CSS và JS -->
+<link rel="stylesheet" th:href="@{/css/player-list.css}">
+<script th:src="@{/js/player-list.js}" defer></script>

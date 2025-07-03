@@ -1,0 +1,22 @@
+<div class="content-wrapper">
+  <section class="content-header">
+    <h1>Thêm quốc gia mới</h1>
+  </section>
+
+  <section class="content">
+    <form th:action="@{/nationals/create}" method="post" class="card card-body">
+      <div class="mb-3">
+        <label for="nationalName" class="form-label">Tên quốc gia</label>
+        <input type="text" class="form-control" id="nationalName" name="nationalName" required>
+      </div>
+
+      <div class="text-end">
+        <a th:href="@{/nationals}" class="btn btn-secondary">Quay lại</a>
+        <button type="submit" class="btn btn-primary">Lưu</button>
+      </div>
+    </form>
+  </section>
+</div>
+
+<link rel="stylesheet" th:href="@{/css/national-create.css}">
+<script th:src="@{/js/national-create.js}" defer></script>

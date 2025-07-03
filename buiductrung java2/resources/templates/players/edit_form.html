@@ -1,0 +1,40 @@
+<div class="content-wrapper">
+  <section class="content-header">
+    <h1>Cập nhật người chơi</h1>
+  </section>
+
+  <section class="content">
+    <form th:action="@{/players/edit}" method="post" th:object="${player}" class="card card-body">
+      <input type="hidden" th:field="*{playerId}">
+
+      <div class="mb-3">
+        <label for="playerName" class="form-label">Tên người chơi</label>
+        <input type="text" id="playerName" th:field="*{playerName}" class="form-control" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="highScore" class="form-label">Điểm cao</label>
+        <input type="number" id="highScore" th:field="*{highScore}" class="form-control" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="level" class="form-label">Cấp độ</label>
+        <input type="number" id="level" th:field="*{level}" class="form-control" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="nationalId" class="form-label">Quốc tịch (ID)</label>
+        <input type="number" id="nationalId" th:field="*{nationalId}" class="form-control" required>
+      </div>
+
+      <div class="text-end">
+        <a th:href="@{/players}" class="btn btn-secondary">Huỷ</a>
+        <button type="submit" class="btn btn-success">Cập nhật</button>
+      </div>
+    </form>
+  </section>
+</div>
+
+<!-- Gắn riêng CSS và JS nếu cần -->
+<link rel="stylesheet" th:href="@{/css/player-edit.css}">
+<script th:src="@{/js/player-edit.js}" defer></script>

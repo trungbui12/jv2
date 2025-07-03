@@ -1,0 +1,32 @@
+<div class="content-wrapper">
+  <section class="content-header">
+    <h1>Danh sách quốc gia</h1>
+    <a th:href="@{/nationals/create}" class="btn btn-primary">+ Thêm quốc gia</a>
+  </section>
+
+  <section class="content">
+    <table class="table table-bordered table-hover">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Tên quốc gia</th>
+        <th>Hành động</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="n : ${nationals}">
+        <td th:text="${n.nationalId}"></td>
+        <td th:text="${n.nationalName}"></td>
+        <td>
+          <a th:href="@{'/nationals/edit/' + ${n.nationalId}}" class="btn btn-sm btn-info">Sửa</a>
+          <a th:href="@{'/nationals/delete/' + ${n.nationalId}}" class="btn btn-sm btn-danger"
+             onclick="return confirm('Xác nhận xoá quốc gia này?')">Xoá</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+
+<link rel="stylesheet" th:href="@{/css/national-list.css}">
+<script th:src="@{/js/national-list.js}" defer></script>

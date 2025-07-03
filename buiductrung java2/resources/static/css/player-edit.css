@@ -1,0 +1,13 @@
+
+.card-body {
+    max-width: 600px;
+    margin: auto;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.text-end .btn {
+    margin-left: 10px;
+}

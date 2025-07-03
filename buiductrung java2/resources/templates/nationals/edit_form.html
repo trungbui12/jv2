@@ -1,0 +1,24 @@
+<div class="content-wrapper">
+  <section class="content-header">
+    <h1>Cập nhật quốc gia</h1>
+  </section>
+
+  <section class="content">
+    <form th:action="@{/nationals/edit}" method="post" th:object="${national}" class="card card-body">
+      <input type="hidden" th:field="*{nationalId}">
+
+      <div class="mb-3">
+        <label for="nationalName" class="form-label">Tên quốc gia</label>
+        <input type="text" class="form-control" th:field="*{nationalName}" id="nationalName" required>
+      </div>
+
+      <div class="text-end">
+        <a th:href="@{/nationals}" class="btn btn-secondary">Huỷ</a>
+        <button type="submit" class="btn btn-success">Cập nhật</button>
+      </div>
+    </form>
+  </section>
+</div>
+
+<link rel="stylesheet" th:href="@{/css/national-edit.css}">
+<script th:src="@{/js/national-edit.js}" defer></script>

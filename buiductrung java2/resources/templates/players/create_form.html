@@ -1,0 +1,39 @@
+<div class="content-wrapper">
+  <section class="content-header">
+    <h1>Thêm người chơi mới</h1>
+  </section>
+
+  <section class="content">
+    <form th:action="@{/players/create}" method="post" class="card card-body">
+      <div class="mb-3">
+        <label for="playerName" class="form-label">Tên người chơi</label>
+        <input type="text" class="form-control" id="playerName" name="playerName" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="highScore" class="form-label">Điểm cao</label>
+        <input type="number" class="form-control" id="highScore" name="highScore" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="level" class="form-label">Cấp độ</label>
+        <input type="number" class="form-control" id="level" name="level" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="nationalId" class="form-label">Quốc tịch (ID)</label>
+        <input type="number" class="form-control" id="nationalId" name="nationalId" required>
+        <small class="form-text text-muted">Nhập ID từ bảng National</small>
+      </div>
+
+      <div class="text-end">
+        <a th:href="@{/players}" class="btn btn-secondary">Quay lại</a>
+        <button type="submit" class="btn btn-primary">Lưu</button>
+      </div>
+    </form>
+  </section>
+</div>
+
+<!-- Gắn riêng CSS và JS nếu muốn -->
+<link rel="stylesheet" th:href="@{/css/player-create.css}">
+<script th:src="@{/js/player-create.js}" defer></script>
